@@ -11,9 +11,16 @@ import css from "../css/app.css"
 //
 import "phoenix_html"
 import 'bootstrap'
-import $ from 'jquery';
+import $ from 'jquery'
+
+import {Socket} from "phoenix"
+import LiveSocket from "phoenix_live_view"
+
 window.jQuery = $;
 window.$ = $;
+
+let liveSocket = new LiveSocket("/live", Socket);
+liveSocket.connect();
 
 // Import local files
 //

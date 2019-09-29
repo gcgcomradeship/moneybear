@@ -23,6 +23,9 @@ defmodule MoneybearWeb do
 
       import Plug.Conn
       import MoneybearWeb.Gettext
+      import Phoenix.LiveView.Controller
+      import Ecto.Query
+      alias Moneybear.Repo
       alias MoneybearWeb.Router.Helpers, as: Routes
     end
   end
@@ -36,6 +39,9 @@ defmodule MoneybearWeb do
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
+      import Phoenix.LiveView,
+        only: [live_render: 2, live_render: 3, live_link: 1, live_link: 2]
+
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
@@ -45,11 +51,20 @@ defmodule MoneybearWeb do
     end
   end
 
+  def plug do
+    quote do
+      use Phoenix.Controller
+      import Ecto.Query
+      alias Moneybear.Repo
+    end
+  end
+
   def router do
     quote do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 

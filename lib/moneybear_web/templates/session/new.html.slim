@@ -1,0 +1,15 @@
+doctype html
+html lang="en"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    title Moneybear · Sign in
+    link href="#{Routes.static_path(@conn, "/css/app.css")}" rel="stylesheet" /
+  body.sign_in_background
+    .container.sign_in
+      = form_for @conn, Routes.session_path(@conn, :new), [as: :session, class: "row form-group"], fn f ->
+        = text_input f, :email, placeholder: "email", class: "form-control sign_in_input"
+        = password_input f, :password, placeholder: "password", class: "form-control sign_in_input"
+        = submit "Sign in", class: "btn btn-dark col align-self-center"

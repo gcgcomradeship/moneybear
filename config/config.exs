@@ -15,7 +15,10 @@ config :moneybear, MoneybearWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "ZTqn62umTBAAabf+SoPHTeaWwoklN8UjY/wRNKjujqAERbKzgAnOZZkgOJkFn6U1",
   render_errors: [view: MoneybearWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Moneybear.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Moneybear.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "HTDJHTFKHTFKHFKHFGKHF"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,6 +27,14 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# SLime
+
+config :phoenix, :template_engines,
+  slim: PhoenixSlime.Engine,
+  slime: PhoenixSlime.Engine,
+  # If you want to use LiveView
+  slimleex: PhoenixSlime.LiveViewEngine
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

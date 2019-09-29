@@ -52,7 +52,7 @@ config :moneybear, MoneybearWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/moneybear_web/views/.*(ex)$},
-      ~r{lib/moneybear_web/templates/.*(eex)$}
+      ~r{lib/moneybear_web/templates/.*(eex|slim|slime)$}
     ]
   ]
 

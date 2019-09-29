@@ -12,7 +12,10 @@ use Mix.Config
 config :moneybear, MoneybearWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  live_view: [
+    signing_salt: System.get_env("SIGNING_SALT")
+  ]
 
 # Do not print debug messages in production
 config :logger, level: :info
