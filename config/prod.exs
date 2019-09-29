@@ -17,6 +17,20 @@ config :moneybear, MoneybearWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :moneybear, MoneybearWeb.Endpoint,
+  http: [port: {:system, "PORT"}],
+  url: [host: System.get_env("HOST") || "188.246.233.46", port: 80],
+  cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env(SECRET_KEY_BASE)
+
+# Configure your database
+config :moneybear, Moneybear.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "20")
+
+# ssl: true
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
@@ -68,4 +82,3 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
-import_config "prod.secret.exs"
