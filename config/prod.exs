@@ -19,9 +19,9 @@ config :logger, level: :info
 
 config :moneybear, MoneybearWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: System.get_env("HOST") || "188.246.233.46", port: 80],
+  url: [host: System.get_env("HOST"), port: 80],
   cache_static_manifest: "priv/static/manifest.json",
-  secret_key_base: System.get_env(SECRET_KEY_BASE)
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Configure your database
 config :moneybear, Moneybear.Repo,
