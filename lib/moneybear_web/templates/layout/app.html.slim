@@ -5,16 +5,18 @@ html lang="en"
     meta charset="utf-8" /
     meta content="IE=edge" http-equiv="X-UA-Compatible" /
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
-    title Moneybear · Sign in
+    title Moneybear
     link href="#{Routes.static_path(@conn, "/css/app.css")}" rel="stylesheet" /
     link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"
     link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet"
-  body.sign_in_background
-    canvas id="c"
-    .board.sign_in
-      = form_for @conn, Routes.session_path(@conn, :new), [as: :session, class: ""], fn f ->
-        = text_input f, :email, placeholder: "email", class: "sign_elem", id: ""
-        = password_input f, :password, placeholder: "password", class: "sign_elem"
-        = submit "Sign in", class: "sign_elem"
 
-    script src="#{Routes.static_path(@conn, "/js/app.js")}" type="text/javascript"
+  body
+    header
+      .head_panel
+        | Main
+        = link "Logout", to: Routes.session_path(@conn, :delete), class: "pull-right"
+    .main
+      main.main-content
+        = render @view_module, @view_template, assigns
+      script src="#{Routes.static_path(@conn, "/js/app.js")}" type="text/javascript"
+

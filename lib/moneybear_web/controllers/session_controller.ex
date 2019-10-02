@@ -27,7 +27,7 @@ defmodule MoneybearWeb.SessionController do
 
   def delete(conn, _params) do
     conn
-    |> delete_session(:current_admin_id)
+    |> delete_session(:current_user_id)
     |> redirect(to: Routes.session_path(conn, :new))
   end
 end
