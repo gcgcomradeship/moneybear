@@ -1,5 +1,11 @@
+body {
+  background-color: black;
+}
+
 .board {
-  padding: 30px;
+  color: #eee;
+  margin: 10px;
+  padding: 16px;
   background: rgb(57,57,57);
   background: linear-gradient(0deg, rgba(57,57,57,1) 0%, rgba(22,22,22,1) 100%);
   border-radius: 0.20rem;
@@ -7,3 +13,60 @@
   border-top: 4px double black;
 }
 
+.grid-board {
+  color: #eee;
+  margin: 10px;
+  padding: 10px 16px;
+  background: rgb(57,57,57);
+  background: linear-gradient(0deg, rgba(57,57,57,1) 0%, rgba(22,22,22,1) 100%);
+  border-radius: 0.20rem;
+  border-right: 4px double black;
+  border-top: 4px double black;
+}
+
+.head-nav ul {
+  margin: 10px;
+  list-style-type: none;
+  vertical-align: center;
+  padding: 0;
+  overflow: hidden;
+  background: rgb(57,57,57);
+  background: linear-gradient(0deg, rgba(57,57,57,1) 0%, rgba(22,22,22,1) 100%);
+  font-family: 'Teko', sans-serif;
+  font-size: 20pt;
+  border-radius: 0.20rem;
+  border-right: 4px double black;
+  border-top: 4px double black;
+}
+
+
+.box-header{
+  font-family: 'Teko', sans-serif;
+  font-size: 20pt;
+  margin-bottom: 15px;
+}
+
+.box-body {
+  height: 100%;
+}
+
+.head-nav li {
+  float: left;
+}
+
+.head-nav li.right {
+  float: right;
+}
+
+.head-nav li a {
+  display: block;
+  color: #02a243;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.head-nav li a:hover {
+  background-color: #111;
+  color: #04de5d;
+}

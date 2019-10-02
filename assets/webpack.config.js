@@ -30,8 +30,18 @@ module.exports = (env, options) => ({
         }
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        test: /\.s(a|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {}
+          },
+          {
+            loader: 'sass-loader',
+            options: {}
+          }
+        ]
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -49,8 +59,8 @@ module.exports = (env, options) => ({
     new MiniCssExtractPlugin({ filename: '../css/app.css' }),
     new CopyWebpackPlugin([{ from: 'static/', to: '../' }]),
     new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery"
+      $: "jquery",
+      jQuery: "jquery"
     })
   ]
 });

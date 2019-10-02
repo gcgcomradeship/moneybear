@@ -13,7 +13,7 @@ html lang="en"
     canvas id="c"
     .board.sign_in
       = form_for @conn, Routes.session_path(@conn, :new), [as: :session, class: ""], fn f ->
-        = text_input f, :email, placeholder: "email", class: "sign_elem", id: ""
+        = text_input f, :email, placeholder: "email", class: "sign_elem"
         = password_input f, :password, placeholder: "password", class: "sign_elem"
         = submit "Sign in", class: "sign_elem"
 

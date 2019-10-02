@@ -20,10 +20,10 @@
   padding: 0;
 }
 
-body {background: black;}
 canvas {display:block;}
 
 .sign_elem{
+  box-sizing: border-box;
   font-family: 'Teko', sans-serif;
   font-size: 16pt !important;
   width: 100%;
@@ -32,7 +32,6 @@ canvas {display:block;}
   color: #eee;
   height: calc(1.3em + 0.7rem + 2px);
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   background-clip: padding-box;

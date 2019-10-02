@@ -12,11 +12,8 @@ html lang="en"
 
   body
     header
-      .head_panel
-        | Main
-        = link "Logout", to: Routes.session_path(@conn, :delete), class: "pull-right"
-    .main
-      main.main-content
-        = render @view_module, @view_template, assigns
-      script src="#{Routes.static_path(@conn, "/js/app.js")}" type="text/javascript"
+      = render MoneybearWeb.LayoutView, "_header.html", assigns
+    main.main-content
+      = render @view_module, @view_template, assigns
+    script src="#{Routes.static_path(@conn, "/js/app.js")}" type="text/javascript"
 
