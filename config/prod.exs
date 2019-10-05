@@ -10,21 +10,16 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :moneybear, MoneybearWeb.Endpoint,
-  http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json",
+  http: [port: {:system, "PORT"}],
+  url: [host: System.get_env("HOST"), port: 443],
+  cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   live_view: [
     signing_salt: System.get_env("SIGNING_SALT")
   ]
 
 # Do not print debug messages in production
 config :logger, level: :info
-
-config :moneybear, MoneybearWeb.Endpoint,
-  http: [port: {:system, "PORT"}],
-  url: [host: System.get_env("HOST"), port: 80],
-  cache_static_manifest: "priv/static/manifest.json",
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Configure your database
 config :moneybear, Moneybear.Repo,

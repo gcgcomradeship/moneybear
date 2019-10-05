@@ -1,4 +1,6 @@
 defmodule MoneybearWeb.Service.Redis do
+  use MoneybearWeb, :services
+
   defp url(), do: Application.get_env(:moneybear, :redis)[:url]
 
   def get(key) when is_bitstring(key) do

@@ -59,6 +59,15 @@ defmodule MoneybearWeb do
     end
   end
 
+  def services do
+    quote do
+      import Ecto.Query
+      alias Moneybear.Repo
+      alias MoneybearWeb.Service.Redis
+      alias MoneybearWeb.Service.State
+    end
+  end
+
   def router do
     quote do
       use Phoenix.Router
