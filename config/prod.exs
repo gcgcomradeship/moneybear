@@ -32,6 +32,15 @@ config :moneybear, Moneybear.Repo,
   url: System.get_env("DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "20")
 
+# Cipher
+config :cipher,
+  keyphrase: System.get_env("KEYPHRASE"),
+  ivphrase: System.get_env("IVPHRASE"),
+  magic_token: System.get_env("MAGIC_TOKEN")
+
+# Redis
+config :moneybear, :redis, url: System.get_env("REDIS_URL")
+
 # ssl: true
 
 # ## SSL Support

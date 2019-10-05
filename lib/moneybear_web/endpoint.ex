@@ -1,11 +1,9 @@
 defmodule MoneybearWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :moneybear
 
-  socket "/socket", MoneybearWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  socket "/socket", MoneybearWeb.UserSocket, websocket: true
 
-  socket "/live", Phoenix.LiveView.Socket
+  socket "/live", Phoenix.LiveView.Socket, websocket: true
 
   # Serve at "/" the static files from "priv/static" directory.
   #

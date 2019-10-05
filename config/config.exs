@@ -28,6 +28,15 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Cipher
+config :cipher,
+  keyphrase: "+R0YfDgxAqnAaWaryEwaKgaJXYQuTMdnZx1PAIY9e/pa4xMZ+X1yUcGPO1PgHCAo",
+  ivphrase: "XcR+eDz2n0yqv3lqUuL7+xFNSuB1UzSLlYB508Jezw7l9XF0T5eYXGqPTmnFljIa",
+  magic_token: "TCutmX7lg6vFXLeTyztcszOGSqGt7jVvdA2kjNIGmozBXpv4YgjFBs8DJGb9egXi"
+
+# Redis
+config :moneybear, :redis, url: "redis://localhost:6379/10"
+
 # SLime
 
 config :phoenix, :template_engines,

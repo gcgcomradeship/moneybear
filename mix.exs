@@ -39,6 +39,7 @@ defmodule Moneybear.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
       {:comeonin, "~> 4.0"},
+      {:cipher, ">= 1.4.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
@@ -46,8 +47,10 @@ defmodule Moneybear.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_slime, "~> 0.12.0"},
-      {:phoenix_live_view, "~> 0.3.0"},
+      {:phoenix_live_view, "~> 0.3.1"},
       {:httpoison, "~> 1.5"},
+      {:redix, ">= 0.0.0"},
+      {:castore, ">= 0.0.0"},
       {:gun, "~> 1.3"},
       # test
       {:floki, ">= 0.0.0", only: :test}

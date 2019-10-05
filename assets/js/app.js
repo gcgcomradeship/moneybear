@@ -17,11 +17,12 @@ import LiveSocket from "phoenix_live_view"
 
 import "./sign_in"
 
+let liveSocket = new LiveSocket("/live", Socket)
+liveSocket.connect()
+
 window.jQuery = $;
 window.$ = $;
 
-let liveSocket = new LiveSocket("/live", Socket);
-liveSocket.connect();
 
 // Import local files
 //

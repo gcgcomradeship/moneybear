@@ -25,6 +25,7 @@ defmodule MoneybearWeb.Router do
     get("/sign_out", SessionController, :delete)
     pipe_through :auth
     get "/", PageController, :index
+    live "/", PageLive
   end
 
   # Other scopes may use custom stacks.
