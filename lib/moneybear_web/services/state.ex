@@ -9,5 +9,10 @@ defmodule MoneybearWeb.Service.State do
   end
 
   defp init(user_id) do
+    new_state = %{
+      page: "main"
+    }
+
+    Redis.set("state/#{user_id}", Jason.encode!(new_state))
   end
 end
