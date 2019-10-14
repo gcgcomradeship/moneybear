@@ -65,6 +65,9 @@ defmodule MoneybearWeb do
       alias Moneybear.Repo
       alias MoneybearWeb.Service.Redis
       alias MoneybearWeb.Service.State
+      alias MoneybearWeb.Service.Setting
+      alias MoneybearWeb.Service.Token
+      alias MoneybearWeb.Service.Request
     end
   end
 

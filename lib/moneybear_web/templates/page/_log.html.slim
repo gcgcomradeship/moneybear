@@ -1,8 +1,29 @@
 .grid-board.box-log
   .box-header.yellow
-    | Log
+    | Status
+    .env-bar.right
+      span.elem.left-elem phx-click="env_sandbox" class="#{@env} #{if @env != "sandbox", do: "disable"}" = "SANDBOX"
+      span.elem.right-elem phx-click="env_reality" class="#{@env} #{if @env != "reality", do: "disable"}" = "REALITY"
   .box-body
-    | Strong data
-    = @log
-    button phx-click="change"
-      | PUSH ME
+    .inner
+      .body
+        | Other:
+        br
+        span.blue style="margin-left: 10px"= "env: "
+        span.lightyellow= "\"#{@env}\""
+        br
+        br
+        | State:
+        br
+        = for {k, v} <- @state do
+          span.blue style="margin-left: 10px"= "#{k}: "
+          span.lightyellow= "#{inspect(v)}"
+          br
+        br
+        | Settings:
+        br
+        = for {k, v} <- @settings do
+          span.blue style="margin-left: 10px"= "#{k}: "
+          span.lightyellow= "\"#{v}\""
+          br
+

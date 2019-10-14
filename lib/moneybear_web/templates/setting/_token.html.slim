@@ -1,0 +1,11 @@
+= if !@settings["token"] do
+  .text
+    | Insert your token to proceed:
+  form phx-change="settings_set_token"
+    input.token placeholder="Insert your token here" name="token"
+- else
+  .text
+    | Token is valid. You can remove actual token:
+  .btn.btn-yellow phx-click="settings_remove_token"
+    | Remove token
+

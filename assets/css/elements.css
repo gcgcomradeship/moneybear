@@ -2,7 +2,20 @@ body {
   background-color: black;
 }
 
+.right{
+  float: right;
+}
+
+.btn{
+  border-radius: 0.20rem;
+  background-color: #666;
+  text-align: center;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
 .board {
+  height: 100%;
   color: #eee;
   margin: 10px;
   padding: 16px;
@@ -14,6 +27,7 @@ body {
 }
 
 .grid-board {
+  height: 100%;
   color: #eee;
   margin: 10px;
   padding: 10px 16px;
@@ -23,6 +37,72 @@ body {
   border-right: 4px double black;
   border-top: 4px double black;
 }
+
+.inner {
+  background-color: #111;
+  border-radius: 0 0 0.20rem 0.20rem;
+}
+
+.inner .body {
+  padding: 10px;
+  overflow: scroll;
+}
+
+.settings .inner .body .text{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #58d5dc;
+}
+
+.inner .body.settings-body {
+  margin-left: 30%;
+}
+
+.inner ul.side-menu {
+  font-size: 18pt;
+  font-family: 'Teko', sans-serif;
+  overflow: scroll;
+  height: 100%;
+  float: left;
+  border-radius: 0 0 0 0.20rem;
+  list-style-type: none;
+  margin: 0;
+  background-color: #111;
+  border-right: 5px solid #222;
+  padding: 0;
+  width: 30%;
+}
+
+.inner ul.side-menu li {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  color: #aaa;
+  text-align: left;
+  vertical-align: bottom;
+  display: block;
+  padding: 10px 16px;
+  background-color: #222;
+  border-right: 1px solid #111;
+  border-bottom: 3px double #111;
+}
+
+.inner ul.side-menu li i {
+  font-size: 26pt;
+}
+
+.inner ul.side-menu li:hover {
+  cursor: pointer;
+  background-color: #333;
+  color: #ccc;
+}
+
+.inner ul.side-menu li.active {
+  cursor: pointer;
+  background-color: #444;
+  color: #ccc;
+}
+
 
 .head-nav ul {
   margin: 10px;
@@ -58,15 +138,54 @@ body {
   float: right;
 }
 
-.head-nav li a {
+.head-nav li .elem {
   display: block;
-  color: #02a243;
   text-align: center;
   padding: 10px 16px;
   text-decoration: none;
 }
 
-.head-nav li a:hover {
+.head-nav li .elem.active {
+  background-color: #222;
+}
+
+.head-nav li .elem:hover {
   background-color: #111;
+  cursor: pointer;
+}
+
+.head-nav li .elem.nav-sandbox {
+  color: #02a243;
+}
+
+.head-nav li .elem.active.nav-sandbox, .head-nav li .elem.nav-sandbox:hover {
   color: #04de5d;
+}
+
+.head-nav li .elem.nav-reality {
+  color: #c30539;
+}
+
+.head-nav li .elem.active.nav-reality, .head-nav li .elem.nav-reality:hover {
+  color: #ff1353;
+}
+
+input.token{
+  box-sizing: border-box;
+  font-family: 'Teko', sans-serif;
+  font-size: 16pt !important;
+  width: 100%;
+  display: block;
+  background-color: #444 !important;
+  color: #eee;
+  height: calc(1.3em + 0.7rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #333;
+  border-radius: 0.20rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-right: 2px double #222;
+  border-top: 2px solid #222;
 }

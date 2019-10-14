@@ -1,0 +1,18 @@
+.grid-board.box-manager
+  .box-header.lightblue
+    | Settings
+    .right class=@env
+      = String.upcase(@env)
+  .box-body.settings
+    .inner
+      ul.side-menu
+        li phx-click="settings_menu_general" class="#{if @settings["menu"] == "general", do: "active"}" = "General"
+        li phx-click="settings_menu_token" class="#{if @settings["menu"] == "token", do: "active"}"
+          = "Token"
+          = if @settings["token"] do
+            i.right.material-icons.sandbox ="check_circle_outline"
+          -else
+            i.right.material-icons.lightyellow ="cached"
+      .body.settings-body
+        = render MoneybearWeb.SettingView, "_#{@settings["menu"]}.html", assigns
+

@@ -9,11 +9,9 @@ html lang="en"
     link href="#{Routes.static_path(@conn, "/css/app.css")}" rel="stylesheet" /
     link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"
     link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet"
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
 
   body
-    header
-      = render MoneybearWeb.LayoutView, "_header.html", assigns
-    main.main-content
-      = render @view_module, @view_template, assigns
+    = render @view_module, @view_template, assigns
     script src="#{Routes.static_path(@conn, "/js/app.js")}" type="text/javascript"
 

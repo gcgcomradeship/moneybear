@@ -1,4 +1,9 @@
 .head-nav
   ul
-    li= link "Moneybear", to: Routes.page_path(@conn, :index)
-    li.right= link "Logout", to: Routes.session_path(@conn, :delete)
+    li
+      .elem phx-click="page_manager" class="#{if @state["page"] == "manager", do: "active"} nav-#{@env}" = "Moneybear"
+
+    li
+      .elem phx-click="page_settings" class="#{if @state["page"] == "settings", do: "active"} nav-#{@env}" = "Settings"
+    li.right= link "Logout", to: "/sign_out", class: "elem nav-#{@env}"
+

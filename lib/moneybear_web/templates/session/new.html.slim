@@ -11,7 +11,7 @@ html lang="en"
     link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet"
   body.sign_in_background
     canvas id="c"
-    .board.sign_in
+    .sign_in
       = form_for @conn, Routes.session_path(@conn, :new), [as: :session, class: ""], fn f ->
         = text_input f, :email, placeholder: "email", class: "sign_elem"
         = password_input f, :password, placeholder: "password", class: "sign_elem"

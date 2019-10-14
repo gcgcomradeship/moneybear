@@ -1,0 +1,23 @@
+.env-bar span.elem{
+  padding: 5px 10px 1px 10px;
+  background-color: #222;
+  /*border-radius: 0.20rem;*/
+  min-width: 100px;
+}
+
+.env-bar span.elem.left-elem{
+  border-radius: 0.20rem 0 0 0.20rem;
+}
+.env-bar span.elem.right-elem{
+  border-radius: 0 0.20rem 0.20rem 0;
+}
+
+.env-bar span.elem.disable{
+  color: #555;
+  background-color: #333;
+}
+
+.env-bar span.elem:hover{
+  cursor: pointer;
+  background-color: #111;
+}

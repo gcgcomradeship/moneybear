@@ -1,3 +1,6 @@
-.grid
-  = render MoneybearWeb.PageView, "_manager.html", assigns
-  = render MoneybearWeb.PageView, "_log.html", assigns
+header
+  = render MoneybearWeb.LayoutView, "_header.html", assigns
+main.main-content
+  .grid
+    = render MoneybearWeb.PageView, "_#{@state["page"]}.html", assigns
+    = render MoneybearWeb.PageView, "_log.html", assigns
