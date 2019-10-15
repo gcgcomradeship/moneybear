@@ -2,7 +2,8 @@
   ul
     li
       .elem phx-click="page_manager" class="#{if @state["page"] == "manager", do: "active"} nav-#{@env}" = "Moneybear"
-
+    li
+      .elem phx-click="page_profile" class="#{if @state["page"] == "profile", do: "active"} nav-#{@env}" = "Profile"
     li
       .elem phx-click="page_settings" class="#{if @state["page"] == "settings", do: "active"} nav-#{@env}" = "Settings"
     li.right= link "Logout", to: "/sign_out", class: "elem nav-#{@env}"

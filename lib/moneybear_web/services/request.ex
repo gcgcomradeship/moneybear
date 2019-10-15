@@ -10,8 +10,8 @@ defmodule MoneybearWeb.Service.Request do
 
   def header(token), do: [{"Authorization", "Bearer #{token}"}]
 
-  def call() do
-    "#{host(Setting.env(1))}/orders"
+  def call(path) do
+    "#{host(Setting.env(1))}#{path}"
     |> HTTPoison.get(header(1))
   end
 
