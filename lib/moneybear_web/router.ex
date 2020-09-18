@@ -19,6 +19,8 @@ defmodule MoneybearWeb.Router do
   end
 
   scope "/", MoneybearWeb do
+    get("/test", TestController, :test)
+    post("/test", TestController, :test)
     pipe_through :browser
     get("/sign_in", SessionController, :new)
     post("/sign_in", SessionController, :create)

@@ -19,4 +19,8 @@ defmodule MoneybearWeb.PageController do
 
     live_render(conn, MoneybearWeb.PageLive, session: session)
   end
+
+  def test(conn, params) do
+    render(conn, "test.json")
+  end
 end

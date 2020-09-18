@@ -14,6 +14,11 @@ body {
   cursor: pointer;
 }
 
+.btn-manager{
+  max-width: 100px;
+  width: 10%;
+}
+
 .board {
   height: 100%;
   color: #eee;

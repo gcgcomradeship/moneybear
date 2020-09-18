@@ -1,5 +1,7 @@
-.grid-board.box-manager
+.grid-board.box-manager#manager
   .box-header.purple
     | Manager
   .box-body
+    .btn.btn-manager phx-click="graph_draw" class="#{@env}" = "DRAW"
+    canvas#graph width="600" height="200"
 

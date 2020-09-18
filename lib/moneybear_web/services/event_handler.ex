@@ -53,4 +53,12 @@ defmodule MoneybearWeb.Service.EventHandler do
     Token.delete(user_id)
     Phoenix.LiveView.assign(socket, %{settings: Setting.all(user_id)})
   end
+
+  def call(
+        %{assigns: %{user_id: user_id}} = socket,
+        "graph_draw",
+        _
+      ) do
+    Phoenix.LiveView.assign(socket, %{settings: Setting.all(user_id)})
+  end
 end
